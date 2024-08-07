@@ -17,17 +17,24 @@
       </p>
       <p class="detail-single-para">
         <label for="user-mail">Email</label>
-        <input type="email" id="user-mail" required>
+        <input type="email" id="user-mail">
       </p>
     </p>
     <p id="user-country-para" class="detail-group-para">
       <p class="detail-single-para">
         <label for="user-country">Country</label>
-        <input type="text" id="user-country" required>
+        <select id="user-country">
+          <option value="in">India</option>
+          <option value="ch">China</option>
+          <option value="jp">Japan</option>
+          <option value="kr">South Korea</option>
+          <option value="us">USA</option>
+          <option value="ge">Georgia</option>
+        </select>
       </p>
       <p class="detail-single-para">
         <label for="user-zip">ZIP Code</label>
-        <input type="number" id="user-zip" required>
+        <input type="text" id="user-zip" required>
       </p>
     </p>
     <p id="user-pwd-para" class="detail-group-para">
@@ -44,7 +51,7 @@
         <input type="checkbox" id="show-pwd-checkbox">
       </p>
     </p>
-    <button type="submit">Submit</button>
+    <button type="submit" id="submitBtn">Submit</button>
   </form>
 </body>
 </html>
