@@ -1,0 +1,156 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* MY CODE */
+:root {
+    font-size: 20px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 110vh;
+}
+
+input:not([type="checkbox"]),
+button,
+select {
+    padding: 0;
+    background: none;
+    border: none;
+    border-radius: 0;
+    outline: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    font: inherit;
+    cursor: pointer;
+}
+
+input.invalid:not([type="checkbox"]) {
+    border-color: red;
+}
+
+input.valid:not([type="checkbox"]) {
+    border-color: black;
+}
+
+input:not([type="checkbox"]),
+select {
+    font-size: 16px;
+    border: 1.5px solid black;
+    border-radius: 6px;
+    padding: 4px 10px;
+}
+
+label,
+button {
+    font-weight: 600;
+}
+
+label,
+input[type="checkbox"] {
+    cursor: pointer;
+}
+
+select {
+    text-align: center;
+}
+
+#validation-form {
+    min-width: 500px;
+}
+
+.detail-single-para {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 50px;
+    position: relative;
+}
+
+.invalid-para {
+    position: absolute;
+    left: 280px;
+    top: 32px;
+    font-size: 11px;
+    font-style: italic;
+    color: #858282;
+}
+
+#checkbox-para {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding-bottom: 50px;
+}
+
+#button-para {
+    display: flex;
+    justify-content: center;
+}
+
+#submitBtn {
+    padding: 12px 40px;
+    border-radius: 12px;
+}
+
+#submitBtn:hover,
+#submitBtn:focus {
+    background-color: #85828227;
+}
+
+input:not([type="checkbox"]):hover,
+input:not([type="checkbox"]):focus,
+#user-country:hover,
+#user-country:focus {
+    box-shadow: 2px 2px 7px -5px black;
+}
