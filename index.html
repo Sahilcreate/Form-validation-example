@@ -9,20 +9,20 @@
 </head>
 <body>
   <form novalidate id="validation-form">
-    <p id="user-detail-para" class="detail-group-para">
-      <p class="detail-single-para">
-        <label for="username">Username</label>
-        <input type="text" id="user-name" required>
-        <p class="invalid-para" id="invalid-name-para"></p>
-      </p>
-      <p class="detail-single-para">
+    <div id="user-detail-para" class="detail-group-para">
+      <div class="detail-single-para">
+        <label for="user-name">Username</label>
+        <input type="text" id="user-name" class="user-input" required>
+        <div class="invalid-para" id="invalid-name-para"></div>
+      </div>
+      <div class="detail-single-para">
         <label for="user-mail">Email</label>
-        <input type="email" id="user-mail">
-        <p class="invalid-para" id="invalid-mail-para"></p>
-      </p>
-    </p>
-    <p id="user-country-para" class="detail-group-para">
-      <p class="detail-single-para">
+        <input type="email" id="user-mail" class="user-input">
+        <div class="invalid-para" id="invalid-mail-para"></div>
+      </div>
+    </div>
+    <div id="user-country-para" class="detail-group-para">
+      <div class="detail-single-para">
         <label for="user-country">Country</label>
         <select id="user-country">
           <option value="in">India</option>
@@ -32,30 +32,32 @@
           <option value="us">USA</option>
           <option value="ge">Georgia</option>
         </select>
-      </p>
-      <p class="detail-single-para">
+      </div>
+      <div class="detail-single-para">
         <label for="user-zip">ZIP Code</label>
-        <input type="text" id="user-zip" required>
-        <p class="invalid-para" id="invalid-zip-para"></p>
-      </p>
-    </p>
-    <p id="user-pwd-para" class="detail-group-para">
-      <p class="detail-single-para">
+        <input type="text" id="user-zip" class="user-input" required>
+        <div class="invalid-para" id="invalid-zip-para"></div>
+      </div>
+    </div>
+    <div id="user-pwd-para" class="detail-group-para">
+      <div class="detail-single-para">
         <label for="user-pwd">Password</label>
-        <input type="password" id="user-pwd" required>
-        <p class="invalid-para" id="invalid-pwd-para"></p>
-      </p>
-      <p class="detail-single-para">
+        <input type="password" id="user-pwd" class="user-input" required>
+        <div class="invalid-para" id="invalid-pwd-para"></div>
+      </div>
+      <div class="detail-single-para">
         <label for="user-confirm-pwd">Confirm Password</label>
-        <input type="password" id="user-confirm-pwd" required>
-        <p class="invalid-para" id="invalid-confirm-pwd-para"></p>
-      </p> 
-      <p>
+        <input type="password" id="user-confirm-pwd" class="user-input" required>
+        <div class="invalid-para" id="invalid-confirm-pwd-para"></div>
+      </div> 
+      <div id="checkbox-para">
         <label for="show-pwd-checkbox">Show Password</label>
         <input type="checkbox" id="show-pwd-checkbox">
-      </p>
-    </p>
-    <button type="submit" id="submitBtn">Submit</button>
+      </div>
+    </div>
+    <div id="button-para">
+      <button type="submit" id="submitBtn">Submit</button>
+    </div>
   </form>
 </body>
 </html>
