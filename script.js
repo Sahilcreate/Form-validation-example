@@ -36,9 +36,9 @@
   document.getElementById("submitBtn").addEventListener("click", (event) => {
     event.preventDefault();
     checkUserName();
-    setTimeout(checkUserMail, 2000);
-    setTimeout(checkZip, 4000);
-    setTimeout(checkPassword, 9000);
+    checkUserMail();
+    checkZip();
+    checkPassword();
   })
 
   console.log("window load");
@@ -47,13 +47,15 @@
 function checkUserName () {
   console.log("checking user name");
   const nameField = document.getElementById("user-name");
+  const invalidTextField = document.getElementById("invalid-name-para")
 
   if (nameField.value.length > 0 && nameField.value.length <= 20) {
     nameField.setCustomValidity("");
+    invalidTextField.textContent = "";
     nameField.classList.remove("invalid");
   } else {
-    nameField.setCustomValidity("Username should be less than 20 characters");
-    nameField.reportValidity();
+    nameField.setCustomValidity("Username should be less than 20 characters and greater than 0 (duh!)");
+    invalidTextField.textContent = nameField.validationMessage;
     nameField.classList.add("invalid");
   }
 }
@@ -61,13 +63,15 @@ function checkUserName () {
 function checkUserMail () {
   console.log("checking user mail");
   const userMail = document.getElementById("user-mail");
+  const invalidTextField = document.getElementById("invalid-mail-para");
 
   if(!userMail.validity.typeMismatch) {
     userMail.setCustomValidity("");
+    invalidTextField.textContent = "";
     userMail.classList.remove("invalid");
   } else {
     userMail.setCustomValidity("Email should be of format 'abc@pqr.xyz' or 'abc@pqr'");
-    userMail.reportValidity();
+    invalidTextField.textContent = userMail.validationMessage;
     userMail.classList.add("invalid");
   }
 }
@@ -102,17 +106,18 @@ function checkZip () {
   };
 
   const country = document.getElementById("user-country").value;
-
   const ZIPField = document.getElementById("user-zip");
+  const invalidTextField = document.getElementById("invalid-zip-para");
 
   const constraint = new RegExp(constraints[country][0]);
 
   if(constraint.test(ZIPField.value)) {
     ZIPField.setCustomValidity("");
+    invalidTextField.textContent = "";
     ZIPField.classList.remove("invalid");
   } else {
     ZIPField.setCustomValidity(constraints[country][1]);
-    ZIPField.reportValidity();
+    invalidTextField.textContent = ZIPField.validationMessage;
     ZIPField.classList.add("invalid");
   }
 }
@@ -123,23 +128,27 @@ function checkPassword () {
 
   const pwdField = document.getElementById("user-pwd");
   const confirdPwdField = document.getElementById("user-confirm-pwd");
+  const invalidPwdField = document.getElementById("invalid-pwd-para");
+  const invalidConfirmPwdField = document.getElementById("invalid-confirm-pwd-para");
 
   const constraint = new RegExp(pwdRegExp);
 
   if (constraint.test(pwdField.value)) {
     if (pwdField.value === confirdPwdField.value) {
       confirdPwdField.setCustomValidity("");
+      invalidConfirmPwdField.textContent = "";
       confirdPwdField.classList.remove("invalid");
     } else {
       confirdPwdField.setCustomValidity("Passwords should match!");
-      confirdPwdField.reportValidity();
+      invalidConfirmPwdField.textContent = confirdPwdField.validationMessage;
       confirdPwdField.classList.add("invalid");
     }
     pwdField.setCustomValidity("");
+    invalidPwdField.textContent = "";
     pwdField.classList.remove("invalid");
   } else {
     pwdField.setCustomValidity("Password must be 8-16 characters, must contain at least one UpperCase, one lowercase, one number & one special character (except underscore)");
-    pwdField.reportValidity();
+    invalidPwdField.textContent = pwdField.validationMessage;
     pwdField.classList.add("invalid");
   }
 }
