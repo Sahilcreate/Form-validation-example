@@ -52,11 +52,11 @@ function checkUserName () {
   if (nameField.value.length > 0 && nameField.value.length <= 20) {
     nameField.setCustomValidity("");
     invalidTextField.textContent = "";
-    nameField.classList.remove("invalid");
+    nameField.classList.replace("invalid", "valid");
   } else {
     nameField.setCustomValidity("Username should be less than 20 characters and greater than 0 (duh!)");
     invalidTextField.textContent = nameField.validationMessage;
-    nameField.classList.add("invalid");
+    nameField.classList.replace("valid", "invalid");
   }
 }
 
@@ -68,11 +68,11 @@ function checkUserMail () {
   if(!userMail.validity.typeMismatch) {
     userMail.setCustomValidity("");
     invalidTextField.textContent = "";
-    userMail.classList.remove("invalid");
+    userMail.classList.replace("invalid", "valid");
   } else {
     userMail.setCustomValidity("Email should be of format 'abc@pqr.xyz' or 'abc@pqr'");
     invalidTextField.textContent = userMail.validationMessage;
-    userMail.classList.add("invalid");
+    userMail.classList.replace("valid", "invalid");
   }
 }
 
@@ -114,11 +114,11 @@ function checkZip () {
   if(constraint.test(ZIPField.value)) {
     ZIPField.setCustomValidity("");
     invalidTextField.textContent = "";
-    ZIPField.classList.remove("invalid");
+    ZIPField.classList.replace("invalid", "valid");
   } else {
     ZIPField.setCustomValidity(constraints[country][1]);
     invalidTextField.textContent = ZIPField.validationMessage;
-    ZIPField.classList.add("invalid");
+    ZIPField.classList.replace("valid", "invalid");
   }
 }
 
@@ -137,19 +137,19 @@ function checkPassword () {
     if (pwdField.value === confirdPwdField.value) {
       confirdPwdField.setCustomValidity("");
       invalidConfirmPwdField.textContent = "";
-      confirdPwdField.classList.remove("invalid");
+      confirdPwdField.classList.replace("invalid", "valid");
     } else {
       confirdPwdField.setCustomValidity("Passwords should match!");
       invalidConfirmPwdField.textContent = confirdPwdField.validationMessage;
-      confirdPwdField.classList.add("invalid");
+      confirdPwdField.classList.replace("valid", "invalid");
     }
     pwdField.setCustomValidity("");
     invalidPwdField.textContent = "";
-    pwdField.classList.remove("invalid");
+    pwdField.classList.replace("invalid", "valid");
   } else {
     pwdField.setCustomValidity("Password must be 8-16 characters, must contain at least one UpperCase, one lowercase, one number & one special character (except underscore)");
     invalidPwdField.textContent = pwdField.validationMessage;
-    pwdField.classList.add("invalid");
+    pwdField.classList.replace("valid", "invalid");
   }
 }
 
